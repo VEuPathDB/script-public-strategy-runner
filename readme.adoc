@@ -1,5 +1,8 @@
 = Public Strategy Runner
 
+image:https://img.shields.io/travis/VEuPathDB/script-public-strategy-runner[Travis (.org),link=https://www.travis-ci.org/github/VEuPathDB/script-public-strategy-runner]
+image:https://img.shields.io/github/v/release/VEuPathDB/script-public-strategy-runner[GitHub release (latest SemVer),link=https://github.com/VEuPathDB/script-public-strategy-runner/releases/latest]
+
 Script that runs all available public strategies on a given
 WDK site.
 
