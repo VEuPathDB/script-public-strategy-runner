@@ -3,6 +3,12 @@
 Script that runs all available public strategies on a given
 WDK site.
 
+.Quick Start (Get latest and run)
+----
+$ curl https://raw.githubusercontent.com/VEuPathDB/script-public-strategy-runner/master/latest.sh \
+  | bash -s -- [ARGS] URL
+----
+
 == Usage
 
 .Basic Usage

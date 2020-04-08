@@ -23,7 +23,7 @@ fi
 readonly GITHUB_API_PATH="https://api.github.com"
 readonly REPO_API_PATH="${GITHUB_API_PATH}/repos/VEuPathDB/script-public-strategy-runner"
 readonly REPO_TARGET="${REPO_API_PATH}/releases/latest"
-readonly BINARY_NAME="param-cache"
+readonly BINARY_NAME="public-strategies"
 
 
 #
@@ -42,5 +42,5 @@ readonly FILE_NAME="$(basename "${FILE_URL}")"
 wget -q "${FILE_URL}" \
   && tar -xzf "${FILE_NAME}" \
   && rm "${FILE_NAME}" \
-  && ./param-cache $@
-rm -rf ./param-cache
+  && ./public-strategies $@
+rm -rf ./public-strategies
