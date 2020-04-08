@@ -13,12 +13,12 @@ script:
 deploy:
   provider: releases
   api_key:
-    secure: PqRKsMp02TTnLoyoRitQQyxVxlJrqt5ir0TZNVeZ6JPIdgyWR51z7soCEogxjpltRXDQl0smrpB3qV/V6SD7HxaDctTk/hAx9wHJs+01ZQklNeRZ5ZdaAOsv3Hy6yDtCdULxa5kL4AZammsrbzGwSrkI9MvApzyamjyqVkorL+fCw6/XiPcQzCiQ3mZXaoDYVwx4689AevU1ZRPCWas3mU3SgZ0oIKDN3ts2Rln0W7QV+DpLF5H0071FJYnZL+t/zYahdCS9YYjSGHwmsaRtPt9/jYLigzwfe1CANNv83alDwuLC1YU/O6lw2Xnfy7D7uJNUU/BRZkWaxovhBiXwySZZLmbW2+wTFp+6E4TZlsNU0W7OOU622cFvewbgbCegInaWTg/9nDWrhJ2PrxwPluOMKWXhg5xAfWYR2hlk2TFZ4lc3HImXo+avx0aJ9gTergoJr5d7byPAM9uiuR5YbSDX5YsyvdmjGQZDmZ8UeeZ85GuhU/c/GDe6iB3v6BGrL2rg/mCs3VpAhBDc0ttPKvY0BKakI9L7s5mX45O7ZReeuATdcJYZAyrMQCtJCj5k+TsBZ1Lnd0sR4QuVyyEqqlekVKR802xHsQnxn4GChHbrekTgmp6yCcrvHmFL0rdMpQwqcZHi3fQfzXHUYJxjmGPUISyt94LqfwI+4TzI32A=
+    secure: UuDzRyO36GwQuZvud9QnMURKrd4rmPRYfImDyjeeaO7yge+I4McAXVuyp21AGq0EC+yesu+SEm/0KRy3VEsapnfMdmx4EnaqnfbTLjojTKkunzcEQEZ+pOacviehxd01OvBZTzNqZ18/HFTfAezxp6iqm5ppMEWVXDUqG4Mo/XIJVrE+P8KpfSfsGO+JvPp5mJ69ggGC56iR0mUdaYH6F/+OXQrrEJG7B3utcvwEp3bOazVWsSrucBehjnBWVhubCu10btTycBqr2vQIK3Gs0QTNJtSyYZ5iCfSp3sZeGCy25BNR+78YEt+XaEGHySYyHzPbzEMw5jjQFpSTd1a4jDU0Bx+xBqYotj9rzH2OHv3uutJtOLZfuF6QWwKyy92HiGRuM0njw1DYTSd+lCMGI292kQoZVecUR4Z7PhMEiM0C0MD8tDbZ+Nz3xII1DNA3EffqDykriGlJwK0MEEpm4uAF9eOd4KgZBdPIYq30zLiV3lnzcPEH5n76AxIcRPkz33IKHeNC29e3ussppOCua9+6R7fQt8en4z5uF8EkNiwCV99nKUcAdJM1CYu+OtwyPEWmK2vg5kQFTW+7uBhOszm7fe3RpzGi0DeIwltLBdV97cD21z+rJV9EzdCwTjdV+5DkciMvabNvhEr7P8v8E5BAAAAu0mGmrQx1einnDUM=
   skip_cleanup: true
   file:
     - bin/public-strategies-darwin.${TRAVIS_TAG}.tar.gz
     - bin/public-strategies-linux.${TRAVIS_TAG}.tar.gz
     - bin/public-strategies-windows.${TRAVIS_TAG}.zip
   on:
-    repo: VEuPathDB/script-site-param-cache
+    repo: VEuPathDB/script-public-strategy-runner
     tags: true
