@@ -1,0 +1,31 @@
+= Public Strategy Runner
+
+Script that runs all available public strategies on a given
+WDK site.
+
+== Usage
+
+.Basic Usage
+----
+$ public-strategies [OPTIONS] <Site-URL>
+----
+
+.Options
+`-a | --auth`::
+  Auth token to run against a QA site from a dev's local
+  machine.
+
+`-t | --threads`::
+  Number of threads / simultaneous requests to run.
+
+`-v | --verbose`::
+  Print debug information to stdout. +
+  Can be used a second time to enable trace level logging.
+
+`-h | --help`::
+  Prints this information
+
+.Arguments
+`Site-URL`::
+  Required.  Specifies the WDK site to run against.  HTTP
+  prefix and app name are optional.
