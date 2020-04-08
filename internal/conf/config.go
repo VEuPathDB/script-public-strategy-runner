@@ -6,4 +6,3 @@ type Configuration struct {
 	Threads uint8
 	Auth    string
 }
-

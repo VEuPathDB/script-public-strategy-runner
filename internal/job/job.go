@@ -12,7 +12,7 @@ func New(conf conf.Configuration) Job {
 	return &job{
 		conf: conf,
 		pool: wp.New(int(conf.Threads)),
-		url: veupath.NewApiUrlBuilder(conf.SiteUrl),
+		url:  veupath.NewApiUrlBuilder(conf.SiteUrl),
 	}
 }
 
@@ -21,8 +21,8 @@ type Job interface {
 }
 
 type job struct {
-	conf conf.Configuration
-	pool *wp.WorkerPool
+	conf  conf.Configuration
+	pool  *wp.WorkerPool
 	stack sync.WaitGroup
 
 	url veupath.ApiUrlBuilder

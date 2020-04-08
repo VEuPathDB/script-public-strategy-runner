@@ -31,20 +31,20 @@ const (
 type Logger interface {
 	LogLevel(level Level) Logger
 
-	Trace(any... interface{}) Logger
-	Tracef(format string, any... interface{}) Logger
+	Trace(any ...interface{}) Logger
+	Tracef(format string, any ...interface{}) Logger
 
-	Debug(any... interface{}) Logger
-	Debugf(format string, any... interface{}) Logger
+	Debug(any ...interface{}) Logger
+	Debugf(format string, any ...interface{}) Logger
 
-	Info(any... interface{}) Logger
-	Infof(format string, any... interface{}) Logger
+	Info(any ...interface{}) Logger
+	Infof(format string, any ...interface{}) Logger
 
-	Warn(any... interface{}) Logger
-	Warnf(format string, any... interface{}) Logger
+	Warn(any ...interface{}) Logger
+	Warnf(format string, any ...interface{}) Logger
 
-	Error(any... interface{}) Logger
-	Errorf(format string, any... interface{}) Logger
+	Error(any ...interface{}) Logger
+	Errorf(format string, any ...interface{}) Logger
 }
 
 func Log() Logger {
@@ -102,14 +102,14 @@ func (l *logger) Error(any ...interface{}) Logger {
 
 func (l *logger) Errorf(format string, any ...interface{}) Logger {
 	fmt.Print(l.leader(LevelError))
-	_, _ = fmt.Fprintf(os.Stderr, format + "\n", any...)
+	_, _ = fmt.Fprintf(os.Stderr, format+"\n", any...)
 	return l
 }
 
 func (l *logger) writef(lvl Level, form string, any []interface{}) Logger {
 	if lvl >= l.level {
 		fmt.Print(l.leader(lvl))
-		fmt.Printf(form + "\n", any...)
+		fmt.Printf(form+"\n", any...)
 	}
 	return l
 }

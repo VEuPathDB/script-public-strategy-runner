@@ -45,7 +45,6 @@ func (j *job) copyStrategy(s service.Strategy) {
 	})
 }
 
-
 func stratCopyBody(s string) []byte {
 	return []byte(fmt.Sprintf(`{"sourceStrategySignature":"` + s + `"}`))
 }

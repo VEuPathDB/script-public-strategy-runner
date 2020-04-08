@@ -6,13 +6,13 @@ import (
 )
 
 func ValidateConfig(conf *Configuration) {
-	if conf.Verbose== 1 {
+	if conf.Verbose == 1 {
 		Log().LogLevel(LevelDebug)
 	} else if conf.Verbose > 1 {
 		Log().LogLevel(LevelTrace)
 	}
 
- 	Log().Tracef("Begin conf.ValidateConfig <- %s", conf)
+	Log().Tracef("Begin conf.ValidateConfig <- %s", conf)
 	defer Log().Tracef("End conf.ValidateConfig -> %s", conf)
 
 	if tmp, err := ResolveUrl(conf.SiteUrl); err != nil {
