@@ -2,8 +2,6 @@ github.com/Foxcapades/Argonaut v0.0.10 h1:UBen01MZAGcrptvZFN3W4KfLa3UoY/B8Z29QPD
 github.com/Foxcapades/Argonaut v0.0.10/go.mod h1:q68GoIOnsK5BpvKaAEitLT1hOMplBCI45ksqxJtV9FA=
 github.com/Foxcapades/Go-ChainRequest v2.6.0+incompatible h1:QiLZ+zIepjVXcIExBtGttPKTjB8pa72mSYCiIPDQgow=
 github.com/Foxcapades/Go-ChainRequest v2.6.0+incompatible/go.mod h1:sKBa2PYX7hjF4rQLnUKUPj2QuhTUm417vKB/oqDeXJE=
-github.com/VEuPathDB/lib-go-rest-types v0.1.9 h1:IV5Pz6psVCAGSC7P/oUNBMWW8EZgd2k9QRsmSjzEH2k=
-github.com/VEuPathDB/lib-go-rest-types v0.1.9/go.mod h1:O7nKy0LMNPMHyj12bE4IvuZ2vfZ9j4WaIs72uk7wMNQ=
 github.com/VEuPathDB/lib-go-rest-types v0.1.10 h1:zHq5xD7Ar48sMu66FHM7Rb5zeZ5DOU4MlXMwZs8zouw=
 github.com/VEuPathDB/lib-go-rest-types v0.1.10/go.mod h1:O7nKy0LMNPMHyj12bE4IvuZ2vfZ9j4WaIs72uk7wMNQ=
 github.com/gammazero/deque v0.0.0-20200227231300-1e9af0e52b46 h1:iX4+rD9Fjdx8SkmSO/O5WAIX/j79ll3kuqv5VdYt9J8=
