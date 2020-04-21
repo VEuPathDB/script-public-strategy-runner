@@ -7,6 +7,7 @@ import (
 
 	. "github.com/Foxcapades/Argonaut/v0"
 	"github.com/Foxcapades/Argonaut/v0/pkg/argo"
+	"github.com/VEuPathDB/lib-go-wdk-api/v0"
 
 	. "github.com/VEuPathDB/script-public-strategy-runner/internal/conf"
 	"github.com/VEuPathDB/script-public-strategy-runner/internal/job"
@@ -55,7 +56,7 @@ func main() {
 
 	ValidateConfig(&config)
 
-	job.New(config).Run()
+	job.New(config, wdk.ForceNew(config.SiteUrl).UseAuthToken(config.Auth)).Run()
 }
 
 func init() {

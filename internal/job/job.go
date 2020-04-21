@@ -1,18 +1,21 @@
 package job
 
 import (
-	"github.com/VEuPathDB/lib-go-rest-types/veupath"
+	"sync"
+
+	"github.com/VEuPathDB/lib-go-wdk-api/v0"
+	wp "github.com/gammazero/workerpool"
+
 	"github.com/VEuPathDB/script-public-strategy-runner/internal/conf"
 	. "github.com/VEuPathDB/script-public-strategy-runner/internal/log"
-	wp "github.com/gammazero/workerpool"
-	"sync"
 )
 
-func New(conf conf.Configuration) Job {
+func New(conf conf.Configuration, api wdk.Api) Job {
 	return &job{
-		conf: conf,
-		pool: wp.New(int(conf.Threads)),
-		url:  veupath.NewApiUrlBuilder(conf.SiteUrl),
+		conf:    conf,
+		pool:    wp.New(int(conf.Threads)),
+		api:     api,
+		userApi: api.CurrentUserApi(),
 	}
 }
 
@@ -25,13 +28,13 @@ type job struct {
 	pool  *wp.WorkerPool
 	stack sync.WaitGroup
 
-	url veupath.ApiUrlBuilder
+	api     wdk.Api
+	userApi wdk.UserApi
 }
 
 func (j *job) Run() {
 	Log().Trace("Start Job.Run()")
 	defer Log().Trace("End Job.Run()")
-	j.url.SetAuthTkt(j.conf.Auth)
 	j.queuePublicStrats()
 	j.stack.Wait()
 	j.pool.StopWait()
