@@ -7,4 +7,6 @@ const (
 		"second time to enable trace level logging"
 	ThreadFlagHelp = "Controls the number of threads used by the process."
 	AuthFlagHelp   = "QA Site auth token"
+	SummaryFlagHelp = "Print a summary of the success/failures in either json " +
+		"or yaml."
 )

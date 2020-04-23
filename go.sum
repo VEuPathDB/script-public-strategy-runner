@@ -1,9 +1,9 @@
-github.com/Foxcapades/Argonaut v0.0.10 h1:UBen01MZAGcrptvZFN3W4KfLa3UoY/B8Z29QPD6rh04=
-github.com/Foxcapades/Argonaut v0.0.10/go.mod h1:q68GoIOnsK5BpvKaAEitLT1hOMplBCI45ksqxJtV9FA=
+github.com/Foxcapades/Argonaut v0.1.7 h1:eDwa4xgT/zMicdbHIv77iB9YUTCVou60LW7kfiYBztM=
+github.com/Foxcapades/Argonaut v0.1.7/go.mod h1:KXdth3ZGCceAcZpHLNw5/DARJ3VxU1asReMSFPMDF3U=
 github.com/Foxcapades/Go-ChainRequest v2.7.4+incompatible h1:hUmvv11pLn3oNv8LSom8EDlwS/imErSKQi2cfwmxfYM=
 github.com/Foxcapades/Go-ChainRequest v2.7.4+incompatible/go.mod h1:sKBa2PYX7hjF4rQLnUKUPj2QuhTUm417vKB/oqDeXJE=
-github.com/VEuPathDB/lib-go-wdk-api v0.0.8 h1:2246G3qMQlVSo+LkO/hVfrpflenDrh+WZS6cgNKWAOE=
-github.com/VEuPathDB/lib-go-wdk-api v0.0.8/go.mod h1:48UmZnM3JbqGIaLMnzZrlv6pjrS5l69S5WIUIdE/F6w=
+github.com/VEuPathDB/lib-go-wdk-api v0.0.14 h1:jCArE8YjdPm9NRLZTTjYuY6dD8TXdKP6cOaLEdd5s+M=
+github.com/VEuPathDB/lib-go-wdk-api v0.0.14/go.mod h1:J1zVm1B3anyBMHidLPgGVN3D3SROb+tYWk53grM+fAM=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/gammazero/deque v0.0.0-20200227231300-1e9af0e52b46 h1:iX4+rD9Fjdx8SkmSO/O5WAIX/j79ll3kuqv5VdYt9J8=
@@ -33,3 +33,7 @@ golang.org/x/sys v0.0.0-20190422165155-953cdadca894 h1:Cz4ceDQGXuKRnVBDTS23GTn/p
 golang.org/x/sys v0.0.0-20190422165155-953cdadca894/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
 golang.org/x/text v0.3.0/go.mod h1:NqM8EUOU14njkJ3fqMW+pc6Ldnwhi/IjpwHt7yyuwOQ=
 golang.org/x/tools v0.0.0-20190328211700-ab21143f2384/go.mod h1:LCzVGOaR6xXOjkQ3onu1FJEFr0SW1gC7cKk1uF8kGRs=
+gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=
+gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
+gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c h1:dUUwHk2QECo/6vqA44rthZ8ie2QXMNeKRTHCNY2nXvo=
+gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c/go.mod h1:K4uyk7z7BCEPqu6E+C64Yfv1cQ7kz7rIZviUmN+EgEM=

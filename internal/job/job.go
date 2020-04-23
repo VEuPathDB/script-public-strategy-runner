@@ -1,6 +1,7 @@
 package job
 
 import (
+	"github.com/VEuPathDB/script-public-strategy-runner/internal/out"
 	"sync"
 
 	"github.com/VEuPathDB/lib-go-wdk-api/v0"
@@ -20,10 +21,11 @@ func New(conf conf.Configuration, api wdk.Api) Job {
 }
 
 type Job interface {
-	Run()
+	Run() out.Summary
 }
 
 type job struct {
+	stat  out.Summary
 	conf  conf.Configuration
 	pool  *wp.WorkerPool
 	stack sync.WaitGroup
@@ -32,10 +34,12 @@ type job struct {
 	userApi wdk.UserApi
 }
 
-func (j *job) Run() {
+func (j *job) Run() out.Summary {
 	Log().Trace("Start Job.Run()")
 	defer Log().Trace("End Job.Run()")
+	j.stat.Url = j.api.GetUrl().String()
 	j.queuePublicStrats()
 	j.stack.Wait()
 	j.pool.StopWait()
+	return j.stat
 }

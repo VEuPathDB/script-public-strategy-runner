@@ -1,7 +1,7 @@
 package job
 
 import (
-	"github.com/VEuPathDB/lib-go-wdk-api/v0/read/common"
+	"github.com/VEuPathDB/lib-go-wdk-api/v0/service/common"
 
 	. "github.com/VEuPathDB/script-public-strategy-runner/internal/log"
 )
@@ -12,6 +12,7 @@ func (j *job) copyStrategy(s common.StrategyListingItem) {
 	res, err := j.userApi.CopyStrategy(s.Signature)
 	if err != nil {
 		Log().Errorf("Failed to copy strategy %s (%d): %s", s.Name, s.StrategyId, err)
+		j.stat.Fail++
 		return
 	}
 

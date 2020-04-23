@@ -101,23 +101,20 @@ func (l *logger) Error(any ...interface{}) Logger {
 }
 
 func (l *logger) Errorf(format string, any ...interface{}) Logger {
-	fmt.Print(l.leader(LevelError))
-	_, _ = fmt.Fprintf(os.Stderr, format+"\n", any...)
+	fmt.Fprintln(os.Stdout, l.leader(LevelError), fmt.Sprintf(format+"\n", any...))
 	return l
 }
 
 func (l *logger) writef(lvl Level, form string, any []interface{}) Logger {
 	if lvl >= l.level {
-		fmt.Print(l.leader(lvl))
-		fmt.Printf(form+"\n", any...)
+		fmt.Println(l.leader(lvl), fmt.Sprintf(form, any...))
 	}
 	return l
 }
 
 func (l *logger) writeln(lvl Level, any []interface{}) Logger {
 	if lvl >= l.level {
-		fmt.Print(l.leader(lvl))
-		fmt.Println(any...)
+		fmt.Println(l.leader(lvl), fmt.Sprint(any...))
 	}
 	return l
 }

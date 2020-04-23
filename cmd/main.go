@@ -1,7 +1,10 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"github.com/VEuPathDB/script-public-strategy-runner/internal/out"
+	"gopkg.in/yaml.v3"
 	"os"
 	"time"
 
@@ -22,33 +25,23 @@ func main() {
 
 	NewCommand().
 		Description(AppDescription).
-		Flag(NewFlag().
-			Short('v').
-			Long("verbose").
-			Description(VerboseFlagHelp).
-			BindUseCount(&config.Verbose)).
-		Flag(NewFlag().
-			Description(ThreadFlagHelp).
-			Short('t').
-			Long("threads").
-			Bind(&config.Threads, true)).
-		Flag(NewFlag().
-			Description(AuthFlagHelp).
-			Short('a').
-			Long("auth").
+		Flag(SlFlag('a', "auth", AuthFlagHelp).
 			Bind(&config.Auth, true)).
-		Flag(NewFlag().
-			Description("Prints current version").
-			Long("version").
+		Flag(LFlag("summary", SummaryFlagHelp).
+			Arg(NewArg().Name("json|yaml").Bind(&config.Summary).Require())).
+		Flag(SlFlag('t', "threads", ThreadFlagHelp).
+			Bind(&config.Threads, true)).
+		Flag(SlFlag('v', "verbose", VerboseFlagHelp).
+			BindUseCount(&config.Verbose)).
+		Flag(SlFlag('V', "version", "Prints current version").
 			OnHit(func(argo.Flag) {
 				fmt.Println(version)
 				os.Exit(0)
 			})).
 		Arg(NewArg().Description("WDK Site url").
 			Require().
-			TypeHint("url-string").
-			Bind(&config.SiteUrl).
-			Name("Site URL")).
+			Name("url-string").
+			Bind(&config.SiteUrl)).
 		MustParse()
 
 	defer func() { Log().Infof("Executed in %s\n", time.Now().Sub(timeStart)) }()
@@ -56,7 +49,19 @@ func main() {
 
 	ValidateConfig(&config)
 
-	job.New(config, wdk.ForceNew(config.SiteUrl).UseAuthToken(config.Auth)).Run()
+	stats := job.New(config, wdk.ForceNew(config.SiteUrl).UseAuthToken(config.Auth)).
+		Run()
+
+	switch config.Summary {
+	case out.SummaryTypeJson:
+		if e := json.NewEncoder(os.Stdout).Encode(stats); e != nil {
+			panic(e)
+		}
+	case out.SummaryTypeYaml:
+		if e := yaml.NewEncoder(os.Stdout).Encode(stats); e != nil {
+			panic(e)
+		}
+	}
 }
 
 func init() {
