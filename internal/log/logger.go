@@ -101,7 +101,7 @@ func (l *logger) Error(any ...interface{}) Logger {
 }
 
 func (l *logger) Errorf(format string, any ...interface{}) Logger {
-	fmt.Fprintln(os.Stdout, l.leader(LevelError), fmt.Sprintf(format+"\n", any...))
+	_, _ = fmt.Fprintln(os.Stderr, l.leader(LevelError), fmt.Sprintf(format, any...))
 	return l
 }
 
