@@ -7,7 +7,8 @@ import (
 type Summary struct {
 	Url string `json:"url" yaml:"URL"`
 	Pass uint `json:"pass" yaml:"Pass"`
-	Fail uint `json:"fail" yaml:"Fail"`
+	Fail uint `json:"500" yaml:"500"`
+	Warn uint `json:"400" yaml:"400"`
 }
 
 type sumAlias Summary
