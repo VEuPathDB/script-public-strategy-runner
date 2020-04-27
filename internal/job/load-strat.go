@@ -3,10 +3,11 @@ package job
 import (
 	"github.com/VEuPathDB/lib-go-wdk-api/v0/service/common"
 	. "github.com/VEuPathDB/script-public-strategy-runner/internal/log"
+	"time"
 )
 
-func (j *job) loadStrategy(id uint, strat *common.StrategyListingItem) {
-	Log().Debugf("Loading strategy copy %s (%d)", strat.Name, id)
+func (j *job) loadStrategy(id uint, strat *common.StrategyListingItem, t time.Time) {
+	Log().Tracef("Loading strategy copy %s (%d)", strat.Name, id)
 
 	if _, err := j.userApi.GetStrategy(id); err != nil {
 		Log().Errorf("Failed to load strategy %s {originalId: %d, copyId: %d}: %s",
@@ -15,4 +16,6 @@ func (j *job) loadStrategy(id uint, strat *common.StrategyListingItem) {
 	} else {
 		j.stat.Pass++
 	}
+
+	Log().Debugf("Successfully ran public strategy %s (%d) in %s", strat.Name, strat.StrategyId, time.Since(t))
 }

@@ -3,12 +3,14 @@ package job
 import (
 	err2 "github.com/VEuPathDB/lib-go-wdk-api/v0/err"
 	"github.com/VEuPathDB/lib-go-wdk-api/v0/service/common"
+	"time"
 
 	. "github.com/VEuPathDB/script-public-strategy-runner/internal/log"
 )
 
 func (j *job) copyStrategy(s common.StrategyListingItem) {
-	Log().Debugf("Submitting strategy copy request for strategy %s", s.Name)
+	Log().Tracef("Submitting strategy copy request for strategy %s", s.Name)
+	start := time.Now()
 
 	res, err := j.userApi.CopyStrategy(s.Signature)
 	if err != nil {
@@ -23,9 +25,5 @@ func (j *job) copyStrategy(s common.StrategyListingItem) {
 		return
 	}
 
-	j.stack.Add(1)
-	j.pool.Submit(func() {
-		defer j.stack.Done()
-		j.loadStrategy(res.Id, &s)
-	})
+	j.loadStrategy(res.Id, &s, start)
 }
