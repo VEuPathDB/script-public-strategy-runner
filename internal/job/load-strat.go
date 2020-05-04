@@ -1,12 +1,12 @@
 package job
 
 import (
-	"github.com/VEuPathDB/lib-go-wdk-api/v0/service/common"
+	"github.com/VEuPathDB/lib-go-wdk-api/v0/model/strategy"
 	. "github.com/VEuPathDB/script-public-strategy-runner/internal/log"
 	"time"
 )
 
-func (j *job) loadStrategy(id uint, strat *common.StrategyListingItem, t time.Time) {
+func (j *job) loadStrategy(id uint, strat *strategy.ShortStrategy, t time.Time) {
 	Log().Tracef("Loading strategy copy %s (%d)", strat.Name, id)
 
 	if _, err := j.userApi.GetStrategy(id); err != nil {

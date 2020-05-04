@@ -1,14 +1,15 @@
 package job
 
 import (
-	err2 "github.com/VEuPathDB/lib-go-wdk-api/v0/err"
-	"github.com/VEuPathDB/lib-go-wdk-api/v0/service/common"
 	"time"
+
+	err2 "github.com/VEuPathDB/lib-go-wdk-api/v0/except"
+	"github.com/VEuPathDB/lib-go-wdk-api/v0/model/strategy"
 
 	. "github.com/VEuPathDB/script-public-strategy-runner/internal/log"
 )
 
-func (j *job) copyStrategy(s common.StrategyListingItem) {
+func (j *job) copyStrategy(s strategy.ShortStrategy) {
 	Log().Tracef("Submitting strategy copy request for strategy %s", s.Name)
 	start := time.Now()
 
@@ -16,7 +17,7 @@ func (j *job) copyStrategy(s common.StrategyListingItem) {
 	if err != nil {
 		Log().Errorf("Failed to copy strategy %s (%d): %s", s.Name, s.StrategyId, err)
 		if tmp, ok := err.(err2.HttpRequestError); ok {
-			if tmp.ResponseCode().Exists() && tmp.ResponseCode().Get() == 400 {
+			if tmp.ResponseCode() != nil && *tmp.ResponseCode() == 400 {
 				j.stat.Warn++
 				return
 			}

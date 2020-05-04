@@ -1,7 +1,6 @@
 package job
 
 import (
-	"github.com/VEuPathDB/script-public-strategy-runner/internal/out"
 	"sync"
 
 	"github.com/VEuPathDB/lib-go-wdk-api/v0"
@@ -9,6 +8,7 @@ import (
 
 	"github.com/VEuPathDB/script-public-strategy-runner/internal/conf"
 	. "github.com/VEuPathDB/script-public-strategy-runner/internal/log"
+	"github.com/VEuPathDB/script-public-strategy-runner/internal/out"
 )
 
 func New(conf conf.Configuration, api wdk.Api) Job {
