@@ -8,6 +8,8 @@ github.com/VEuPathDB/lib-go-wdk-api v0.0.20 h1:U9elnVu+VNmcjUY9YtZo2BBWJPcdeGtqg
 github.com/VEuPathDB/lib-go-wdk-api v0.0.20/go.mod h1:J1zVm1B3anyBMHidLPgGVN3D3SROb+tYWk53grM+fAM=
 github.com/VEuPathDB/lib-go-wdk-api v0.0.21-0.20200504224318-305d4120ee43 h1:ZQblf90UAtZEhi0gqc1A274PjDb31mMgXJWF8D8HCvQ=
 github.com/VEuPathDB/lib-go-wdk-api v0.0.21-0.20200504224318-305d4120ee43/go.mod h1:J1zVm1B3anyBMHidLPgGVN3D3SROb+tYWk53grM+fAM=
+github.com/VEuPathDB/lib-go-wdk-api v0.0.21 h1:kF9/m3nYGM+aka7Fqh/+qSgD7/TOdopXje0e5rHleWc=
+github.com/VEuPathDB/lib-go-wdk-api v0.0.21/go.mod h1:J1zVm1B3anyBMHidLPgGVN3D3SROb+tYWk53grM+fAM=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/gammazero/deque v0.0.0-20200227231300-1e9af0e52b46 h1:iX4+rD9Fjdx8SkmSO/O5WAIX/j79ll3kuqv5VdYt9J8=
